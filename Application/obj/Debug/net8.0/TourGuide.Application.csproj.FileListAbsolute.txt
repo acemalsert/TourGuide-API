@@ -1,0 +1,15 @@
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\bin\Debug\net8.0\TourGuide.Application.deps.json
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\bin\Debug\net8.0\TourGuide.Application.dll
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\bin\Debug\net8.0\TourGuide.Application.pdb
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\bin\Debug\net8.0\TourGuide.Domain.dll
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\bin\Debug\net8.0\TourGuide.Domain.pdb
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\TourGuide.Application.csproj.AssemblyReference.cache
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\TourGuide.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\TourGuide.Application.AssemblyInfoInputs.cache
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\TourGuide.Application.AssemblyInfo.cs
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\TourGuide.Application.csproj.CoreCompileInputs.cache
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\TourGuid.0D0B6457.Up2Date
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\TourGuide.Application.dll
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\refint\TourGuide.Application.dll
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\TourGuide.Application.pdb
+C:\Users\IntelliYazilim\source\repos\TourGuide\Application\obj\Debug\net8.0\ref\TourGuide.Application.dll

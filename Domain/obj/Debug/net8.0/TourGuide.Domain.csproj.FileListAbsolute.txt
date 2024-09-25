@@ -1,0 +1,11 @@
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\bin\Debug\net8.0\TourGuide.Domain.deps.json
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\bin\Debug\net8.0\TourGuide.Domain.dll
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\bin\Debug\net8.0\TourGuide.Domain.pdb
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\obj\Debug\net8.0\TourGuide.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\obj\Debug\net8.0\TourGuide.Domain.AssemblyInfoInputs.cache
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\obj\Debug\net8.0\TourGuide.Domain.AssemblyInfo.cs
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\obj\Debug\net8.0\TourGuide.Domain.csproj.CoreCompileInputs.cache
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\obj\Debug\net8.0\TourGuide.Domain.dll
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\obj\Debug\net8.0\refint\TourGuide.Domain.dll
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\obj\Debug\net8.0\TourGuide.Domain.pdb
+C:\Users\IntelliYazilim\source\repos\TourGuide\Domain\obj\Debug\net8.0\ref\TourGuide.Domain.dll
