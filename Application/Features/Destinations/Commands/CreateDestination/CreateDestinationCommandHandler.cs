@@ -33,6 +33,9 @@ namespace TourGuide.Application.Features.Destinations.Commands.CreateDestination
                 request.CategoryId 
             );
 
+            IList<Destination> destinations = await unitOfWork.GetReadRepository<Destination>().GetAllAsync();
+            
+
             await unitOfWork.GetWriteRepository<Destination>().AddAsync(destination);
 
             if (await unitOfWork.SaveAsync() > 0)

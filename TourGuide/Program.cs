@@ -1,4 +1,4 @@
-using TourGuide.Application;
+﻿using TourGuide.Application;
 using TourGuide.Persistance;
 using TourGuide.Mapper;
 using TourGuide.Application.Exceptions;
@@ -39,4 +39,4 @@ app.MapControllers();
 
 app.Run();
 
-// DERS 15
+// DERS 15 te kaldım

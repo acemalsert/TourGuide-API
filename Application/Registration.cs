@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Reflection;
 using TourGuide.Application.Behaviours;
 using TourGuide.Application.Exceptions;
+using TourGuide.Application.Features.Destinations.Rules;
 
 namespace TourGuide.Application
 {
@@ -15,6 +16,7 @@ namespace TourGuide.Application
             var assembly = Assembly.GetExecutingAssembly();
 
             services.AddTransient<ExceptionMiddleware>();
+            services.AddTransient<DestinationRules>();
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
 
