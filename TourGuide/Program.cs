@@ -39,4 +39,4 @@ app.MapControllers();
 
 app.Run();
 
-// DERS 14 - CRUD k?sm? commandlar eksik kalm?s bu dersi bitirirken eksikleri de tamamala!
+// DERS 15
