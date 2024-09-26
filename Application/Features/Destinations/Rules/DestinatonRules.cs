@@ -9,9 +9,9 @@ using TourGuide.Application.Features.Destinations.Exceptions;
 
 namespace TourGuide.Application.Features.Destinations.Rules
 {
-    public class ProductRules : BaseRules
+    public class DestinationRules : BaseRules
     {
-        public Task ProductTitleMustNotBeSame(IList<Destination> destinations, string requestName)
+        public Task DestinationTitleMustNotBeSame(IList<Destination> destinations, string requestName)
         {
             if (destinations.Any(x => x.Name == requestName)) throw new DestinationTitleMustNotBeSameException();
             return Task.CompletedTask;

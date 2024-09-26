@@ -4,6 +4,7 @@ using TourGuide.Application.Features.Destinations.Commands.CreateDestination;
 using TourGuide.Application.Features.Destinations.Commands.DeleteDestination;
 using TourGuide.Application.Features.Destinations.Commands.UpdateDestination;
 using TourGuide.Application.Features.Destinations.Queries.GetAllDestinations;
+using TourGuide.Application.Features.Destinations.Queries.GetDestination;
 
 namespace TourGuide.Api.Controllers
 {
@@ -23,6 +24,13 @@ namespace TourGuide.Api.Controllers
         {
             var response = await mediator.Send(new GetAllDestinationsQueryRequest());
 
+            return Ok(response);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetDestinationById(int id)
+        {
+            var response = await mediator.Send(new GetDestinationByIdQueryRequest { Id = id });
             return Ok(response);
         }
 

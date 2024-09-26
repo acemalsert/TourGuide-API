@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.UnitOfWorks;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace TourGuide.Application.Features.Destinations.Queries.GetAllDestinations
 {
@@ -15,13 +16,14 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetAllDestinations
         }
         public async Task<IList<GetAllDestinationsQueryResponse>> Handle(GetAllDestinationsQueryRequest request, CancellationToken cancellationToken)
         {
-            var destinations = await unitOfWork.GetReadRepository<Destination>().GetAllAsync();
+            var destinations = await unitOfWork.GetReadRepository<Destination>().Find(destination => destination.IsDeleted == false).ToListAsync();
 
             List<GetAllDestinationsQueryResponse> response = new();
 
             foreach (var destination in destinations)
                 response.Add(new GetAllDestinationsQueryResponse
                 {   
+                    Id = destination.Id.ToString(),
                     Name = destination.Name,
                     Description = destination.Description,
                     Latitude = destination.Latitude,
