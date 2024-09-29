@@ -40,6 +40,8 @@ namespace TourGuide.Api.Controllers
             await mediator.Send(request);
             return Ok();
         }
+
+        // TODO :  Burayı test et ve frontend ile uyumlu hale getir 
         [HttpPost]
         public async Task<IActionResult> UpdateDestination(UpdateDestinationCommandRequest request)
         {

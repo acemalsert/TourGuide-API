@@ -27,14 +27,14 @@ namespace TourGuide.Application.Features.Destinations.Commands.UpdateDestination
 
             destination.Name = request.Name;
             destination.Description = request.Description;
-            destination.Location = request.Location;
-            destination.Latitude = request.Latitude;
-            destination.Longitude = request.Longitude;
-            destination.OpeningTime = request.OpeningTime;
-            destination.ClosingTime = request.ClosingTime;
-            destination.TicketPrice = request.TicketPrice;
-            destination.ImageUrl = request.ImageUrl;
-            destination.CategoryId = request.CategoryId;
+            //destination.Location = request.Location;
+            //destination.Latitude = request.Latitude;
+            //destination.Longitude = request.Longitude;
+            //destination.OpeningTime = request.OpeningTime;
+            //destination.ClosingTime = request.ClosingTime;
+            //destination.TicketPrice = request.TicketPrice;
+            //destination.ImageUrl = request.ImageUrl;
+            //destination.CategoryId = request.CategoryId;
 
             await unitOfWork.GetWriteRepository<Destination>().UpdateAsync(destination);
             await unitOfWork.SaveAsync();

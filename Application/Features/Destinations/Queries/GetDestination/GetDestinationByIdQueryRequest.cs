@@ -9,7 +9,7 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetDestination
 {
     public class GetDestinationByIdQueryRequest : IRequest<GetDestinationByIdQueryResponse>
     {
-        public int Id { get; set; } // Destinasyonun ID'sini tutuyoruz
+        public int Id { get; set; } 
     }
 
 }

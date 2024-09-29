@@ -8,6 +8,7 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetDestination
 {
     public class GetDestinationByIdQueryResponse
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Latitude { get; set; }

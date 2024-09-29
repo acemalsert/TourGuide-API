@@ -24,6 +24,7 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetDestination
 
             return new GetDestinationByIdQueryResponse
             {
+                Id = destination.Id,
                 Name = destination.Name,
                 Description = destination.Description,
                 Latitude = destination.Latitude,
