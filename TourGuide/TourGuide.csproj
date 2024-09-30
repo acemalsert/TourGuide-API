@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application\TourGuide.Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\Mapper\TourGuide.Mapper.csproj" />
     <ProjectReference Include="..\Persistance\Persistance.csproj" />
   </ItemGroup>

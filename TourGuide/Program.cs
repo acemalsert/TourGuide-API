@@ -2,6 +2,7 @@
 using TourGuide.Persistance;
 using TourGuide.Mapper;
 using TourGuide.Application.Exceptions;
+using TourGuide.Infrastructure;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +33,7 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
@@ -53,4 +55,4 @@ app.MapControllers();
 
 app.Run();
 
-// JWT - Access ve Refresh Token Servisi Yapılmalı
+// JWT Konfigürasyonları ve Token Servis Yapılmalı
