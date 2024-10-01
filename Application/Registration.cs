@@ -6,18 +6,17 @@ using System.Reflection;
 using TourGuide.Application.Bases;
 using TourGuide.Application.Behaviours;
 using TourGuide.Application.Exceptions;
-using TourGuide.Application.Features.Destinations.Rules;
 
 namespace TourGuide.Application
 {
     public static class Registration
     {
+
         public static void AddApplication(this IServiceCollection services)
         {
             var assembly = Assembly.GetExecutingAssembly();
 
             services.AddTransient<ExceptionMiddleware>();
-            services.AddTransient<DestinationRules>();
 
             services.AddRulesFromAssemblyContaining(assembly, typeof(BaseRules));
 
@@ -27,12 +26,13 @@ namespace TourGuide.Application
             ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
+
         }
 
         private static IServiceCollection AddRulesFromAssemblyContaining(
-           this IServiceCollection services,
-           Assembly assembly,
-           Type type)
+            this IServiceCollection services,
+            Assembly assembly,
+            Type type)
         {
             var types = assembly.GetTypes().Where(t => t.IsSubclassOf(type) && type != t).ToList();
             foreach (var item in types)
