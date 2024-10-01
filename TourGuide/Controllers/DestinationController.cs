@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TourGuide.Application.Features.Destinations.Commands.CreateDestination;
 using TourGuide.Application.Features.Destinations.Commands.DeleteDestination;
@@ -20,6 +21,7 @@ namespace TourGuide.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllDestinations()
         {
             var response = await mediator.Send(new GetAllDestinationsQueryRequest());
@@ -41,7 +43,6 @@ namespace TourGuide.Api.Controllers
             return Ok();
         }
 
-        // TODO :  Burayı test et ve frontend ile uyumlu hale getir 
         [HttpPost]
         public async Task<IActionResult> UpdateDestination(UpdateDestinationCommandRequest request)
         {
