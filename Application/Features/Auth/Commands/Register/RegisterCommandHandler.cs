@@ -25,6 +25,12 @@ namespace TourGuide.Application.Features.Auth.Commands.Register
         {
             await authRules.UserShouldNotBeExist(await userManager.FindByEmailAsync(request.Email));
 
+            // TODO : hatayı yukarıdaki gibi authrules gibi yönetmeliyiz. Hızlı olması açısından şimdilik bu satır eklendi
+            if (!AllowedRoles.Roles.Contains(request.Role.ToLower()))
+            {
+                throw new ArgumentException($"Geçersiz rol: {request.Role}. Sadece şu roller kabul edilir: {string.Join(", ", AllowedRoles.Roles)}");
+            }
+
             User user = mapper.Map<User, RegisterCommandRequest>(request);
             user.UserName = request.Email;
             user.SecurityStamp = Guid.NewGuid().ToString();
@@ -32,19 +38,25 @@ namespace TourGuide.Application.Features.Auth.Commands.Register
             IdentityResult result = await userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)
             {
-                if (!await roleManager.RoleExistsAsync("user"))
+                if (!await roleManager.RoleExistsAsync(request.Role))
                     await roleManager.CreateAsync(new Role
                     {
                         Id = Guid.NewGuid(),
-                        Name = "user",
-                        NormalizedName = "USER",
+                        Name = request.Role,
+                        NormalizedName = request.Role.ToUpper(),
                         ConcurrencyStamp = Guid.NewGuid().ToString(),
                     });
 
-                await userManager.AddToRoleAsync(user, "user");
+                await userManager.AddToRoleAsync(user, request.Role.ToLower());
             }
 
             return Unit.Value;
+        }
+
+        // TODO : bunu tasımalıyız!
+        public static class AllowedRoles
+        {
+            public static readonly List<string> Roles = new List<string> { "user", "guide" };
         }
     }
 }

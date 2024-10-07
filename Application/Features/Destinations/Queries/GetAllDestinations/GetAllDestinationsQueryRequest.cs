@@ -3,10 +3,11 @@ using TourGuide.Application.Interfaces.RedisCache;
 
 namespace TourGuide.Application.Features.Destinations.Queries.GetAllDestinations
 {
-    public class GetAllDestinationsQueryRequest : IRequest<IList<GetAllDestinationsQueryResponse>>, ICacheableQuery
+    // TODO : Closed for fast development
+    public class GetAllDestinationsQueryRequest : IRequest<IList<GetAllDestinationsQueryResponse>>/*, ICacheableQuery*/
     {
-        string ICacheableQuery.CacheKey => "GetAllDestinations";
+        //string ICacheableQuery.CacheKey => "GetAllDestinations";
 
-        public double CacheTime => 60;
+        //public double CacheTime => 60;
     }
 }
