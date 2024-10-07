@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TourGuide.Application.Features.Auth.Queries.GetAllUsers
 {
-    internal class GetAllUsersQueryResponse
+    public class GetAllUsersQueryResponse
     {
+        public string FullName { get; set; }
+        public string Description { get; set; }
+        
     }
 }

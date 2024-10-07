@@ -5,6 +5,8 @@ using TourGuide.Application.Features.Auth.Commands.RefreshToken;
 using TourGuide.Application.Features.Auth.Commands.Register;
 using TourGuide.Application.Features.Auth.Commands.Revoke;
 using TourGuide.Application.Features.Auth.Commands.RevokeAll;
+using TourGuide.Application.Features.Auth.Queries.GetAllUsers;
+using TourGuide.Application.Features.Destinations.Queries.GetAllDestinations;
 
 namespace TourGuide.Controllers
 {
@@ -52,6 +54,13 @@ namespace TourGuide.Controllers
         {
             await mediator.Send(new RevokeAllCommandRequest());
             return StatusCode(StatusCodes.Status200OK);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var response = await mediator.Send(new GetAllUsersQueryRequest());
+            return Ok(response);
         }
     }
 }
