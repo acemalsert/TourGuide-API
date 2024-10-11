@@ -7,7 +7,6 @@ using TourGuide.Application.Features.Auth.Commands.Revoke;
 using TourGuide.Application.Features.Auth.Commands.RevokeAll;
 using TourGuide.Application.Features.Auth.Queries.GetAllGuides;
 using TourGuide.Application.Features.Auth.Queries.GetAllUsers;
-using TourGuide.Application.Features.Destinations.Queries.GetAllDestinations;
 
 namespace TourGuide.Controllers
 {
