@@ -25,6 +25,7 @@ public class GetAllGuidesQueryHandler : IRequestHandler<GetAllGuidesQueryRequest
             {
                 response.Add(new GetAllGuidesQueryResponse()
                 {
+                    Id = user.Id,
                     FullName = user.FullName,
                     Description = user.Description,
                 });
