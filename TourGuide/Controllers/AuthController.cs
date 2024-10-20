@@ -8,6 +8,7 @@ using TourGuide.Application.Features.Auth.Commands.RevokeAll;
 using TourGuide.Application.Features.Auth.Queries.GetAllGuides;
 using TourGuide.Application.Features.Auth.Queries.GetAllUsers;
 using TourGuide.Application.Features.Auth.Queries.GetGuideById;
+using TourGuide.Application.Features.Auth.Queries.GetUserById;
 
 namespace TourGuide.Controllers
 {
@@ -72,9 +73,16 @@ namespace TourGuide.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetGuidesById(Guid id)
+        public async Task<IActionResult> GetGuideById(Guid id)
         {
             var response = await mediator.Send(new GetGuideByIdQueryRequest { Id = id});
+            return Ok(response);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById(Guid id)
+        {
+            var response = await mediator.Send(new GetUserByIdQueryRequest { Id = id });
             return Ok(response);
         }
     }
