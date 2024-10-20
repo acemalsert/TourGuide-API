@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿    using Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TourGuide.Domain.Entities;
@@ -14,6 +14,8 @@ namespace TourGuide.Persistance.Context
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Destination> Destinations { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<DestinationAddress> DestinationAddresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,6 +24,19 @@ namespace TourGuide.Persistance.Context
             // Apply configurations for Category and Destination
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new DestinationConfiguration());
+
+            modelBuilder.Entity<DestinationAddress>()
+            .HasKey(da => new { da.DestinationId, da.AddressId });
+
+            modelBuilder.Entity<DestinationAddress>()
+                .HasOne(da => da.Destination)
+                .WithMany() 
+                .HasForeignKey(da => da.DestinationId);
+
+            modelBuilder.Entity<DestinationAddress>()
+                .HasOne(da => da.Address)
+                .WithMany() 
+                .HasForeignKey(da => da.AddressId);
         }
     }
 }

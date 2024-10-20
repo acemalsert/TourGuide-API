@@ -1,13 +1,15 @@
 ﻿using Domain.Common;
+using TourGuide.Domain.Entities;
 
 namespace Domain.Entities
 {
     public class Destination : EntityBase
     {
-        public Destination()
-        {
-        }
-        public Destination(string name, string description, string location, double latitude, double longitude, TimeSpan openingTime, TimeSpan closingTime, decimal ticketPrice, string imageUrl, int categoryId)
+        public Destination() { }
+
+        public Destination(string name, string description, string location, double latitude, double longitude,
+                          TimeSpan openingTime, TimeSpan closingTime, decimal ticketPrice,
+                          string imageUrl, int categoryId, int? addressId = null)
         {
             Name = name;
             Description = description;
@@ -19,28 +21,25 @@ namespace Domain.Entities
             TicketPrice = ticketPrice;
             ImageUrl = imageUrl;
             CategoryId = categoryId;
+            AddressId = addressId;
         }
 
         public string Name { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
-
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-
         public TimeSpan OpeningTime { get; set; }
         public TimeSpan ClosingTime { get; set; }
-
         public decimal TicketPrice { get; set; }
-
-        // Image can be a URL or binary data
-        public string ImageUrl { get; set; } // Or byte[] if you store the image in the DB
+        public string ImageUrl { get; set; }
 
         // Foreign Key
         public int CategoryId { get; set; }
+        public int? AddressId { get; set; }
 
-        // Navigation Property
+        // Navigation Properties
         public Category Category { get; set; }
+        public Address Address { get; set; }
     }
-
 }
