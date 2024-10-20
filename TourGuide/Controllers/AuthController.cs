@@ -71,7 +71,7 @@ namespace TourGuide.Controllers
             return Ok(response);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetGuidesById(Guid id)
         {
             var response = await mediator.Send(new GetGuideByIdQueryRequest { Id = id});
