@@ -54,7 +54,8 @@ namespace TourGuide.Application.Features.Auth.Commands.Login
             {
                 Token = _token,
                 RefreshToken = refreshToken,
-                Expiration = token.ValidTo
+                Expiration = token.ValidTo,
+                Id = user.Id
             };
 
         }

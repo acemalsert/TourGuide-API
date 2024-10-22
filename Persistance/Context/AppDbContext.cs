@@ -16,6 +16,7 @@ namespace TourGuide.Persistance.Context
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<DestinationAddress> DestinationAddresses { get; set; }
+        public DbSet<Country>Countries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

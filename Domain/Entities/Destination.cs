@@ -26,6 +26,7 @@ namespace Domain.Entities
 
         public string Name { get; set; }
         public string Description { get; set; }
+        // TODO : bu alanı silmek lazım
         public string Location { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }

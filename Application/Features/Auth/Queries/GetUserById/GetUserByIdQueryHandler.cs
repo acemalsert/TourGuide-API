@@ -30,8 +30,11 @@ namespace TourGuide.Application.Features.Auth.Queries.GetAllUsers
             // Gerekli olan diğer alanlar da sonradan eklenmeli queryresponse'a
             GetUserByIdQueryResponse response = new GetUserByIdQueryResponse
             {
+                Id = request.Id,
                 FullName = user.FullName,
                 Description = user.Description,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber
             };
 
             return response;
