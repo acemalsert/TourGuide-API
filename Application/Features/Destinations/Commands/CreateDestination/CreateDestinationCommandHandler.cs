@@ -23,13 +23,10 @@ namespace TourGuide.Application.Features.Destinations.Commands.CreateDestination
             Destination destination = new Destination(
                 request.Name,
                 request.Description,
-                request.Location,
-                request.Latitude,
-                request.Longitude,
                 request.OpeningTime,
                 request.ClosingTime,
                 request.TicketPrice,
-                request.ImageUrl,
+                request.ImageData,
                 request.CategoryId 
             );
 

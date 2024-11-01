@@ -26,8 +26,10 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetAllDestinations
                     Id = destination.Id.ToString(),
                     Name = destination.Name,
                     Description = destination.Description,
-                    Latitude = destination.Latitude,
-                    Longitude = destination.Longitude
+                    ImageData = destination.ImageData,
+                    
+                    //Latitude = destination.Latitude,
+                    //Longitude = destination.Longitude
                 });
 
             return response;

@@ -23,6 +23,9 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
+    <Folder Include="Features\Addresses\Commands\" />
+    <Folder Include="Features\Addresses\Exceptions\" />
+    <Folder Include="Features\Addresses\Rules\" />
   </ItemGroup>
 
 </Project>

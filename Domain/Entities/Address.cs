@@ -12,7 +12,8 @@ namespace TourGuide.Domain.Entities
         public string CityName { get; set; }
         public string RegionName { get; set; }
         public int PostalCode { get; set; }
-
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         // Foreign Key
         public int CountryId { get; set; }
 

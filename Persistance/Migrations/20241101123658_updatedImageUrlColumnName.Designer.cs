@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TourGuide.Persistance.Context;
 
@@ -11,9 +12,11 @@ using TourGuide.Persistance.Context;
 namespace Persistance.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241101123658_updatedImageUrlColumnName")]
+    partial class updatedImageUrlColumnName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,36 +51,36 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryName = "Computers",
-                            CreatedDate = new DateTime(2024, 2, 21, 4, 22, 31, 536, DateTimeKind.Local).AddTicks(3524),
+                            CategoryName = "Books",
+                            CreatedDate = new DateTime(2024, 1, 10, 6, 20, 32, 517, DateTimeKind.Local).AddTicks(4657),
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 2,
-                            CategoryName = "Sports",
-                            CreatedDate = new DateTime(2023, 1, 8, 9, 7, 59, 119, DateTimeKind.Local).AddTicks(15),
+                            CategoryName = "Garden",
+                            CreatedDate = new DateTime(2023, 9, 18, 11, 55, 39, 762, DateTimeKind.Local).AddTicks(110),
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 3,
-                            CategoryName = "Music",
-                            CreatedDate = new DateTime(2024, 1, 10, 19, 9, 49, 9, DateTimeKind.Local).AddTicks(9397),
+                            CategoryName = "Computers",
+                            CreatedDate = new DateTime(2023, 2, 5, 21, 1, 18, 790, DateTimeKind.Local).AddTicks(6988),
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 4,
                             CategoryName = "Garden",
-                            CreatedDate = new DateTime(2022, 11, 23, 20, 19, 14, 1, DateTimeKind.Local).AddTicks(3187),
+                            CreatedDate = new DateTime(2023, 6, 7, 16, 18, 36, 80, DateTimeKind.Local).AddTicks(7881),
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 5,
-                            CategoryName = "Games",
-                            CreatedDate = new DateTime(2023, 7, 28, 7, 16, 48, 94, DateTimeKind.Local).AddTicks(6254),
+                            CategoryName = "Computers",
+                            CreatedDate = new DateTime(2023, 8, 12, 12, 49, 51, 359, DateTimeKind.Local).AddTicks(4242),
                             IsDeleted = false
                         });
                 });
@@ -96,8 +99,8 @@ namespace Persistance.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ClosingTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("ClosingTime")
+                        .HasColumnType("time");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -117,8 +120,8 @@ namespace Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("OpeningTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("OpeningTime")
+                        .HasColumnType("time");
 
                     b.Property<decimal>("TicketPrice")
                         .HasColumnType("decimal(18,2)");
@@ -135,132 +138,132 @@ namespace Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryId = 5,
-                            ClosingTime = new DateTime(2024, 11, 1, 18, 6, 35, 918, DateTimeKind.Local).AddTicks(5835),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(3218),
-                            Description = "Veniam quod quisquam mollitia magni tenetur occaecati tenetur. Sapiente qui quos ipsam qui soluta numquam eos voluptatem qui. Necessitatibus et voluptas aut animi consequatur at vel cum repudiandae. Ut rerum quae quia quis. Fugit commodi assumenda accusantium omnis unde itaque ut.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/342.jpg",
+                            CategoryId = 2,
+                            ClosingTime = new TimeSpan(0, 18, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 310, DateTimeKind.Local).AddTicks(9493),
+                            Description = "In ipsam alias porro. Ullam quasi aut qui est et adipisci placeat architecto. Autem soluta placeat ut quis itaque reprehenderit ipsam praesentium.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/186.jpg",
                             IsDeleted = false,
-                            Name = "Harveyport",
-                            OpeningTime = new DateTime(2024, 11, 1, 9, 1, 21, 114, DateTimeKind.Local).AddTicks(7856),
-                            TicketPrice = 49.98m
+                            Name = "Monicafort",
+                            OpeningTime = new TimeSpan(0, 10, 0, 0, 0),
+                            TicketPrice = 80.67m
                         },
                         new
                         {
                             Id = 2,
-                            CategoryId = 4,
-                            ClosingTime = new DateTime(2024, 11, 1, 18, 33, 51, 449, DateTimeKind.Local).AddTicks(7036),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(4811),
-                            Description = "Officia et animi aspernatur fugit. Nisi non magnam. Sit et error inventore. Sed unde aut maxime odio facere quaerat. Consequuntur aut et ea veritatis aperiam earum cumque sint facilis. Alias doloremque expedita.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/773.jpg",
+                            CategoryId = 2,
+                            ClosingTime = new TimeSpan(0, 18, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(1085),
+                            Description = "Explicabo natus odio velit omnis. Quam explicabo dolor molestiae deserunt. Dolor molestias mollitia perspiciatis maxime suscipit quia sint. Deserunt sunt nulla corrupti voluptatum dolorem. Perspiciatis nulla eveniet voluptas quisquam.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/348.jpg",
                             IsDeleted = false,
-                            Name = "Anastaciofort",
-                            OpeningTime = new DateTime(2024, 11, 1, 9, 18, 12, 857, DateTimeKind.Local).AddTicks(6969),
-                            TicketPrice = 44.49m
+                            Name = "Mullershire",
+                            OpeningTime = new TimeSpan(0, 10, 0, 0, 0),
+                            TicketPrice = 54.32m
                         },
                         new
                         {
                             Id = 3,
-                            CategoryId = 4,
-                            ClosingTime = new DateTime(2024, 11, 1, 18, 13, 6, 655, DateTimeKind.Local).AddTicks(6190),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(5085),
-                            Description = "Delectus quia sequi reprehenderit sint. Perferendis et minus nobis ipsum aperiam voluptatem quidem architecto ut. Consectetur in voluptatem itaque eveniet. Et suscipit eligendi earum. Dolorum corrupti quo sapiente recusandae a vitae. Et enim voluptatibus iure aut neque qui cum ut suscipit.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/754.jpg",
+                            CategoryId = 2,
+                            ClosingTime = new TimeSpan(0, 18, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(1328),
+                            Description = "Sunt aut voluptas facere aut cum error molestiae est. Eum corporis totam necessitatibus unde. Et expedita qui. Sequi incidunt et illo tempore aut omnis dolorum in. Atque nostrum repellat incidunt quasi quo facere ipsam molestiae dolorum.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/784.jpg",
                             IsDeleted = false,
-                            Name = "Penelopetown",
-                            OpeningTime = new DateTime(2024, 11, 1, 8, 25, 32, 767, DateTimeKind.Local).AddTicks(1054),
-                            TicketPrice = 24.65m
+                            Name = "West Uriah",
+                            OpeningTime = new TimeSpan(0, 10, 0, 0, 0),
+                            TicketPrice = 16.02m
                         },
                         new
                         {
                             Id = 4,
-                            CategoryId = 4,
-                            ClosingTime = new DateTime(2024, 11, 1, 17, 7, 53, 38, DateTimeKind.Local).AddTicks(6529),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(5269),
-                            Description = "Adipisci maiores cum magni accusamus sit quae sed sunt. Dignissimos distinctio corrupti architecto et blanditiis fugiat beatae qui eos. Expedita quo cumque a autem. Nihil sequi eum mollitia quo et ut adipisci et. Quo neque suscipit incidunt assumenda esse vel molestiae molestias. Voluptatibus porro modi modi.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/860.jpg",
+                            CategoryId = 2,
+                            ClosingTime = new TimeSpan(0, 19, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(1487),
+                            Description = "Voluptatum possimus id ea at vero. Natus animi ratione corrupti iste magni. Maiores rerum sit hic labore repellendus eum qui non. Ut a quia. Inventore voluptatem ducimus perspiciatis at.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1100.jpg",
                             IsDeleted = false,
-                            Name = "Charitystad",
-                            OpeningTime = new DateTime(2024, 11, 1, 9, 34, 51, 691, DateTimeKind.Local).AddTicks(1834),
-                            TicketPrice = 24.83m
+                            Name = "Jerdechester",
+                            OpeningTime = new TimeSpan(0, 9, 0, 0, 0),
+                            TicketPrice = 62.58m
                         },
                         new
                         {
                             Id = 5,
-                            CategoryId = 2,
-                            ClosingTime = new DateTime(2024, 11, 1, 18, 19, 4, 511, DateTimeKind.Local).AddTicks(1211),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(5436),
-                            Description = "Qui vero quibusdam reprehenderit fugit et. Est perspiciatis corporis corrupti qui. Sit dolorem commodi deleniti ducimus voluptas quia est laudantium. Optio nemo incidunt consectetur voluptatem.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/681.jpg",
+                            CategoryId = 5,
+                            ClosingTime = new TimeSpan(0, 19, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(1641),
+                            Description = "Facere rerum qui adipisci odit ipsum reiciendis laborum et. Aliquid nulla error fugit provident numquam et. Repudiandae cum perferendis eveniet nihil molestiae labore voluptatibus voluptas. Sed omnis ut aut et unde nihil. Ea omnis temporibus nam et et quia alias aut.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/774.jpg",
                             IsDeleted = false,
-                            Name = "Raeside",
-                            OpeningTime = new DateTime(2024, 11, 1, 8, 51, 56, 459, DateTimeKind.Local).AddTicks(765),
-                            TicketPrice = 24.39m
+                            Name = "Jermeymouth",
+                            OpeningTime = new TimeSpan(0, 10, 0, 0, 0),
+                            TicketPrice = 28.39m
                         },
                         new
                         {
                             Id = 6,
                             CategoryId = 3,
-                            ClosingTime = new DateTime(2024, 11, 1, 17, 31, 16, 865, DateTimeKind.Local).AddTicks(8987),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(5554),
-                            Description = "Aliquam minus officiis in nulla dolor magni culpa molestiae. Totam dolor repellendus voluptatem. Nesciunt exercitationem quaerat eius assumenda eveniet quia molestiae.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/47.jpg",
+                            ClosingTime = new TimeSpan(0, 17, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(1811),
+                            Description = "Consequatur vero praesentium nam et. Doloremque laborum sit id repellat at dolor in. Omnis sunt in impedit delectus commodi reprehenderit omnis omnis nihil. Rerum minima laborum animi labore error ut. Modi eaque sit amet amet fugit enim. Aut et impedit.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1146.jpg",
                             IsDeleted = false,
-                            Name = "Port Haleighmouth",
-                            OpeningTime = new DateTime(2024, 11, 1, 8, 1, 33, 204, DateTimeKind.Local).AddTicks(8019),
-                            TicketPrice = 72.53m
+                            Name = "North Clementview",
+                            OpeningTime = new TimeSpan(0, 9, 0, 0, 0),
+                            TicketPrice = 19.26m
                         },
                         new
                         {
                             Id = 7,
-                            CategoryId = 4,
-                            ClosingTime = new DateTime(2024, 11, 1, 18, 51, 48, 420, DateTimeKind.Local).AddTicks(3047),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(5729),
-                            Description = "Et tenetur accusamus exercitationem mollitia debitis vitae ut nobis ut. Aut suscipit quae sint commodi deserunt et dolorem qui quo. Autem velit aut. Quae reiciendis porro sit ad corporis. Ipsam eum eveniet aliquid qui in.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1090.jpg",
+                            CategoryId = 1,
+                            ClosingTime = new TimeSpan(0, 18, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(1974),
+                            Description = "Voluptas eos aut enim excepturi natus iusto veritatis. Consequatur ipsa vel necessitatibus. Ut tempore voluptatum sunt mollitia.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/471.jpg",
                             IsDeleted = false,
-                            Name = "North Glen",
-                            OpeningTime = new DateTime(2024, 11, 1, 9, 7, 34, 688, DateTimeKind.Local).AddTicks(6344),
-                            TicketPrice = 27.19m
+                            Name = "Goodwinmouth",
+                            OpeningTime = new TimeSpan(0, 9, 0, 0, 0),
+                            TicketPrice = 69.58m
                         },
                         new
                         {
                             Id = 8,
-                            CategoryId = 3,
-                            ClosingTime = new DateTime(2024, 11, 1, 18, 30, 13, 238, DateTimeKind.Local).AddTicks(5756),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(5887),
-                            Description = "Facilis esse dolore quod voluptatibus. Natus est fugiat minima dignissimos quas cumque et excepturi sunt. Est autem totam hic repellendus expedita deleniti qui. Et ex aut vitae temporibus sed. Et quia vel expedita earum dolore facilis est. Voluptatum nam saepe officia doloribus sunt.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1078.jpg",
+                            CategoryId = 5,
+                            ClosingTime = new TimeSpan(0, 18, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(2073),
+                            Description = "Nihil hic veniam et qui consequatur nemo quo incidunt. Commodi qui iure et eos at odit omnis. Laboriosam voluptatem consectetur sed accusamus rerum enim ducimus animi.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1000.jpg",
                             IsDeleted = false,
-                            Name = "Terryland",
-                            OpeningTime = new DateTime(2024, 11, 1, 8, 22, 34, 611, DateTimeKind.Local).AddTicks(3664),
-                            TicketPrice = 71.32m
+                            Name = "Noeliashire",
+                            OpeningTime = new TimeSpan(0, 9, 0, 0, 0),
+                            TicketPrice = 79.56m
                         },
                         new
                         {
                             Id = 9,
-                            CategoryId = 2,
-                            ClosingTime = new DateTime(2024, 11, 1, 18, 38, 13, 624, DateTimeKind.Local).AddTicks(5560),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(6074),
-                            Description = "Pariatur perferendis assumenda error dolore quia. Consectetur id deleniti ab rerum non aperiam. Id dolorem qui a et omnis enim nihil. Sunt et quia ipsa est animi architecto reprehenderit quia iste. Ipsa molestiae deserunt aut corporis magni fugiat et tenetur explicabo.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1093.jpg",
+                            CategoryId = 1,
+                            ClosingTime = new TimeSpan(0, 17, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(2186),
+                            Description = "Alias delectus omnis natus quis voluptatem quis aliquam. Non accusamus in cumque accusamus et accusantium nam. Omnis fugit commodi consequuntur.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1223.jpg",
                             IsDeleted = false,
-                            Name = "Connerchester",
-                            OpeningTime = new DateTime(2024, 11, 1, 9, 53, 11, 632, DateTimeKind.Local).AddTicks(8939),
-                            TicketPrice = 15.58m
+                            Name = "Celineville",
+                            OpeningTime = new TimeSpan(0, 9, 0, 0, 0),
+                            TicketPrice = 90.67m
                         },
                         new
                         {
                             Id = 10,
-                            CategoryId = 3,
-                            ClosingTime = new DateTime(2024, 11, 1, 18, 8, 35, 595, DateTimeKind.Local).AddTicks(7600),
-                            CreatedDate = new DateTime(2024, 11, 1, 16, 38, 1, 142, DateTimeKind.Local).AddTicks(6215),
-                            Description = "Eveniet quia laboriosam accusantium. Voluptate quam nesciunt earum modi magni autem. Tempora ea maiores impedit. Nisi sapiente deserunt. Eveniet repudiandae voluptatum recusandae. Nemo iusto explicabo.",
-                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/16.jpg",
+                            CategoryId = 2,
+                            ClosingTime = new TimeSpan(0, 18, 0, 0, 0),
+                            CreatedDate = new DateTime(2024, 11, 1, 15, 36, 58, 311, DateTimeKind.Local).AddTicks(2260),
+                            Description = "Aut totam doloremque. Expedita vitae velit nihil qui dolorem. Commodi voluptas ipsa amet impedit eligendi quod hic architecto.",
+                            ImageData = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/911.jpg",
                             IsDeleted = false,
-                            Name = "South Horaceborough",
-                            OpeningTime = new DateTime(2024, 11, 1, 9, 52, 31, 811, DateTimeKind.Local).AddTicks(7456),
-                            TicketPrice = 82.71m
+                            Name = "Port Ferne",
+                            OpeningTime = new TimeSpan(0, 10, 0, 0, 0),
+                            TicketPrice = 52.71m
                         });
                 });
 
