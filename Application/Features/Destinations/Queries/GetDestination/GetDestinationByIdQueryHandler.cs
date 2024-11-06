@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.UnitOfWorks;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace TourGuide.Application.Features.Destinations.Queries.GetDestination
 {
@@ -15,7 +16,10 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetDestination
 
         public async Task<GetDestinationByIdQueryResponse> Handle(GetDestinationByIdQueryRequest request, CancellationToken cancellationToken)
         {
-            var destination = unitOfWork.GetReadRepository<Destination>().Find(x => x.Id == request.Id && x.IsDeleted == false).FirstOrDefault();
+            var destination = unitOfWork.GetReadRepository<Destination>().Find(x => x.Id == request.Id && x.IsDeleted == false)
+                .Include(destination => destination.Address).FirstOrDefault();
+
+            
 
             if (destination == null)
             {
@@ -27,8 +31,9 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetDestination
                 Id = destination.Id,
                 Name = destination.Name,
                 Description = destination.Description,
-                //Latitude = destination.Latitude,
-                //Longitude = destination.Longitude
+                ImageData = destination.ImageData,
+                Latitude = destination.Address.Latitude,
+                Longitude = destination.Address.Longitude
             };
         }
     }
