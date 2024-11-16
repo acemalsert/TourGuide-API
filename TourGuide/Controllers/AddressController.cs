@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TourGuide.Application.Features.Addresses.Commands.CreateAddress;
 using TourGuide.Application.Features.Addresses.Queries.GetAllAddresses;
 using TourGuide.Application.Features.Categories.Queries.GetAllCategories;
 
@@ -25,6 +26,13 @@ namespace TourGuide.Controllers
             var response = await mediator.Send(new GetAllAddressesQueryRequest());
 
             return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAddress(CreateAddressCommandRequest request)
+        {
+           await mediator.Send(request);
+           return Ok();
         }
 
     }
