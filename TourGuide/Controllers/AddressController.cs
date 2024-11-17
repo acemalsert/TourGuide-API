@@ -24,7 +24,6 @@ namespace TourGuide.Controllers
         public async Task<IActionResult> GetAllAddresses()
         {
             var response = await mediator.Send(new GetAllAddressesQueryRequest());
-
             return Ok(response);
         }
 

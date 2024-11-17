@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TourGuide.Application.Features.Countries.Queries.GetAllCountries;
 
 namespace TourGuide.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class CountriesController : ControllerBase
     {
@@ -15,6 +15,13 @@ namespace TourGuide.Controllers
             this.mediator = mediator;
         }
 
+        [HttpGet]
+        //[Authorize]
+        public async Task<IActionResult> GetAllCountries()
+        {
+            var response = await mediator.Send(new GetAllCountriesQueryRequest());
+            return Ok(response);
+        }
 
     }
 }

@@ -1,9 +1,7 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TourGuide.Application.Features.Categories.Queries.GetAllCategories;
 using TourGuide.Application.Features.Categories.Queries.GetCategory;
-using TourGuide.Application.Features.Destinations.Queries.GetDestination;
 
 namespace TourGuide.Controllers
 {
