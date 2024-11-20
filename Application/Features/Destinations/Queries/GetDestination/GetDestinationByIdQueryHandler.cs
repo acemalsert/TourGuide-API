@@ -33,7 +33,10 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetDestination
                 Description = destination.Description,
                 ImageData = destination.ImageData,
                 Latitude = destination.Address.Latitude,
-                Longitude = destination.Address.Longitude
+                Longitude = destination.Address.Longitude,
+                TicketPrice = destination.TicketPrice,
+                OpeningTime = destination.OpeningTime,
+                ClosingTime = destination.ClosingTime
             };
         }
     }

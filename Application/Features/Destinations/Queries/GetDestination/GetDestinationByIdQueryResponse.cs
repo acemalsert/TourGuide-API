@@ -14,5 +14,8 @@ namespace TourGuide.Application.Features.Destinations.Queries.GetDestination
         public string ImageData { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public decimal TicketPrice { get; set; }
+        public DateTime OpeningTime { get; set; }
+        public DateTime ClosingTime { get; set; }
     }
 }
