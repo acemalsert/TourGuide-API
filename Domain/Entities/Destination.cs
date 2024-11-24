@@ -35,5 +35,6 @@ namespace Domain.Entities
         // Navigation Properties
         public Category Category { get; set; }
         public Address Address { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
     }
 }

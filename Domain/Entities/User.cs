@@ -8,5 +8,6 @@ namespace TourGuide.Domain.Entities
         public string? Description { get; set; }
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpiryTime { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
     }
 }

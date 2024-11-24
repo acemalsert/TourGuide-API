@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Stripe;
 using Stripe.Checkout;
+using TourGuide.Domain.Entities;
 
 namespace TourGuide.Controllers
 {
@@ -21,14 +22,16 @@ namespace TourGuide.Controllers
             public int Quantity { get; set; }
             public int Amount { get; set; }
             public string Currency { get; set; }
+            public int NoOfProducts {  get; set; }
         }
 
         [HttpPost]
         public IActionResult CreateCheckoutSession([FromBody] ProductRequest productRequest)
         {
+            
             StripeConfiguration.ApiKey = _configuration["Stripe:SecretKey"];
 
-            var options = new Stripe.Checkout.SessionCreateOptions
+            var options = new SessionCreateOptions
             {
                 PaymentMethodTypes = new List<string> { "card" },
                 LineItems = new List<SessionLineItemOptions>
@@ -37,7 +40,7 @@ namespace TourGuide.Controllers
                 {
                     PriceData = new SessionLineItemPriceDataOptions
                     {
-                        UnitAmount = productRequest.Amount * 100, 
+                        UnitAmount = productRequest.Amount * 100,
                         Currency = productRequest.Currency,
                         ProductData = new SessionLineItemPriceDataProductDataOptions
                         {
@@ -48,14 +51,16 @@ namespace TourGuide.Controllers
                 },
             },
                 Mode = "payment",
-                SuccessUrl = _configuration["Stripe:SuccessUrl"], 
-                CancelUrl = _configuration["Stripe:CancelUrl"],  
+                SuccessUrl = _configuration["Stripe:SuccessUrl"],
+                CancelUrl = _configuration["Stripe:CancelUrl"],
             };
 
-            var service = new Stripe.Checkout.SessionService();
-            Stripe.Checkout.Session session = service.Create(options);
+            var service = new SessionService();
+            Session session = service.Create(options);
 
             return Ok(new { sessionId = session.Id });
         }
+
+
     }
 }
