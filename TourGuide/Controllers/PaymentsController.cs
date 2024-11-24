@@ -27,7 +27,7 @@ namespace TourGuide.Controllers
 
         [HttpPost]
         public IActionResult CreateCheckoutSession([FromBody] ProductRequest productRequest)
-        {
+        {asda
             
             StripeConfiguration.ApiKey = _configuration["Stripe:SecretKey"];
 
