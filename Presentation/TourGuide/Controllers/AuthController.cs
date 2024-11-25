@@ -10,6 +10,7 @@ using TourGuide.Application.Features.Auth.Queries.GetAllUsers;
 using TourGuide.Application.Features.Auth.Queries.GetGuideById;
 using TourGuide.Application.Features.Auth.Queries.GetUserById;
 
+
 namespace TourGuide.Controllers
 {
     [Route("api/[controller]/[action]")]

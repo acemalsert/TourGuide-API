@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Stripe;
 using Stripe.Checkout;
-using TourGuide.Domain.Entities;
+
 
 namespace TourGuide.Controllers
 {
@@ -27,7 +27,7 @@ namespace TourGuide.Controllers
 
         [HttpPost]
         public IActionResult CreateCheckoutSession([FromBody] ProductRequest productRequest)
-        {asda
+        {
             
             StripeConfiguration.ApiKey = _configuration["Stripe:SecretKey"];
 

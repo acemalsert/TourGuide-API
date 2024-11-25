@@ -20,10 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\TourGuide.Application.csproj" />
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-    <ProjectReference Include="..\Mapper\TourGuide.Mapper.csproj" />
-    <ProjectReference Include="..\Persistance\Persistance.csproj" />
+    <ProjectReference Include="..\..\Core\Application\TourGuide.Application.csproj" />
+    <ProjectReference Include="..\..\Core\Domain\TourGuide.Domain.csproj" />
+    <ProjectReference Include="..\..\Core\Mapper\TourGuide.Mapper.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Persistance\Persistance.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Persistance\Persistance.csproj" />
   </ItemGroup>
 
 </Project>
